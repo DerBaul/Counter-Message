@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#counter {
+    font-size: 20em;
+    font-weight: bold;
+}
+
+#addone {
+    margin: auto;
+    padding-top: 15px;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-size: 2em;
+}
+
+#message_box {
+    margin-top: 100px;
+    padding: 20px;
+    height: 400px;
+    width: 100%;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
