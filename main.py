@@ -1,4 +1,3 @@
-from email import message
 import sqlite3 as sl
 
 con = sl.connect("messages.db")
