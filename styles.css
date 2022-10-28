@@ -1,43 +1,88 @@
 body {
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
+    margin: 0;
 }
 
-#content {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    width: 50%;
-    margin: auto;
+.bg-dark{
+    background-color: #212121;
+}
+.text-white{
+    color: #fff;
+}
+.text-red{
+    color: #FF4934;
+}
+.text-small{
+    font-weight: 400;
+    font-size: 16px;
+}
+.text-title{
+    font-size: 46px;
+    font-weight: 600;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    height: 100vh;
+    max-height: 2000px;
+    padding: 20px;
+    position: relative;
+}
+.center{
     text-align: center;
 }
 
-#counter {
-    font-size: 20em;
-    font-weight: bold;
+.circle{
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    border: 4px solid #fff;
+    font-size: 25px;  
+    font-weight: 900;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-overflow: clip;
 }
 
-#addone {
-    margin: auto;
-    padding-top: 15px;
-    width: 200px;
-    height: 50px;
-    background-color: black;
-    border-radius: 5px;
+#hero{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    position: absolute;
+}
+#counter{
+
+    font-size: 222px;
+    font-weight:650;
+}
+#tap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.2em;
+    opacity: 50%;
+}
+
+#bottom{
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#addM{
+    background-color: #FF4934;
+    border: none;
+    border-radius: 12px;
     color: white;
-    font-size: 2em;
-}
-
-#message_box {
-    margin-top: 100px;
-    padding: 20px;
-    height: 400px;
-    width: 100%;
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
