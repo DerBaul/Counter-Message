@@ -1,12 +1,24 @@
 import sqlite3 as sl
+from flask import Flask
 
-con = sl.connect("messages.db")
+app = Flask(__name__)
 
+@app.route("/")
+def hello_world():
+    return "Hello World"
+
+con = sl.connect("messages.db", check_same_thread = False)
+
+@app.route("/show_data")
 def show_data():
     with con:
-        data = con.execute("SELECT * FROM USER")
-        for row in data:
+        raw_data = con.execute("SELECT * FROM USER")
+        data = []
+        for row in raw_data:
             print(row)
+            data.append(row)
+        print(data)
+        return data
 
 def show_data_by_num(num):
     with con:
@@ -22,7 +34,7 @@ def add_data(num, message):
     with con:
         con.executemany(sql, data)
 
-
+@app.route("/count_inc")
 def count_inc():
     with open("count", "r") as f:
         data = next(f)
@@ -30,10 +42,10 @@ def count_inc():
     
     with open("count", "w") as f:
         f.write(str(int(data)+1))
+    return "data"
 
-
-
-
+hello_world()
+"""
 if input("Increase Count? Y/N\n") == "Y":
     count_inc()
 
@@ -45,3 +57,4 @@ if input("Show all? Y/N\n") == "Y":
 
 if input("Show by Number? Y/N\n") == "Y": 
     show_data_by_num(input())
+"""
