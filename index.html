@@ -17,14 +17,34 @@
 
     <div id="hero" class="center">
         <div id="counter" class="text-red">0</div>
-        
+
         <div id="tap" class="text-small"> <p>Tap your screen</p> </div>
     </div>
 
     <div id="bottom" class="center">
-        <div id="addM" class="">Add Message</div>
+        
+        <textarea id="newmessage" maxlength="250" placeholder="Type your message here and use the buttons to choose where it'll appear." required></textarea>
+
+        <div id="addnums">
+            <div id="add1" class="smallb">+1</div>
+            <div id="add5" class="smallb">+5</div>
+            <div id="add10" class="smallb">+10</div>
+            <div id="add20" class="smallb">+20</div>
+        </div>
+        <button type="submit" id="addM" class="">Add Message</button>
+        
     </div>
 
 </div>
+
+<script type="text/javascript">
+    textarea = document.querySelector("#newmessage");
+    textarea.addEventListener('input', autoResize, false);
+  
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+</script>
 </body>
 </html>

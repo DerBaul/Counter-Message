@@ -46,10 +46,23 @@ body {
     text-overflow: clip;
 }
 
+.smallb {
+    background-color: #FF4934;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 10px;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 25px;
+}
+
 #hero{
     margin-top: 50px;
     margin-bottom: 50px;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -70%);
     position: absolute;
@@ -73,8 +86,36 @@ body {
     bottom: 80px;
     left: 50%;
     transform: translate(-50%, 0);
+    display: flex;
+    flex-direction: column;
 }
 
+#addnums{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+#add1{
+    margin-left: 0;
+}
+
+#newmessage{
+    width: 250px;
+    padding: 5px 5px 5px 10px;
+    margin-bottom: 20px;
+    font-family: Roboto, sans-serif;
+    border: none;
+    border-radius: 12px;
+    resize: none;
+    word-break: break-word;
+}
+
+#newmessage:focus, input:focus{
+    outline-color: #FF4934;
+}
 #addM{
     background-color: #FF4934;
     border: none;
@@ -83,6 +124,5 @@ body {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
 }
