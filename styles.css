@@ -91,7 +91,7 @@ body {
 }
 
 #addnums{
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 100%;
     margin-bottom: 20px;
@@ -111,6 +111,7 @@ body {
     border-radius: 12px;
     resize: none;
     word-break: break-word;
+    display: none;
 }
 
 #newmessage:focus, input:focus{

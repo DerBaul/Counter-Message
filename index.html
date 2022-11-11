@@ -23,21 +23,22 @@
 
     <div id="bottom" class="center">
         
-        <textarea id="newmessage" maxlength="250" placeholder="Type your message here and use the buttons to choose where it'll appear." required></textarea>
+        <textarea id="newmessage" maxlength="250" placeholder="Type your message here and use the buttons to choose where it'll appear."></textarea>
 
         <div id="addnums">
-            <div id="add1" class="smallb">+1</div>
-            <div id="add5" class="smallb">+5</div>
-            <div id="add10" class="smallb">+10</div>
-            <div id="add20" class="smallb">+20</div>
+            <div id="add1" class="smallb" onclick="addI()">+1</div>
+            <div id="add5" class="smallb" onclick="addV()">+5</div>
+            <div id="add10" class="smallb" onclick="addX()">+10</div>
+            <div id="add20" class="smallb" onclick="addXX()">+20</div>
         </div>
-        <button type="submit" id="addM" class="">Add Message</button>
+        <button onclick="addmbehave()" id="addM" class="">Add Message</button>
         
     </div>
 
 </div>
 
 <script type="text/javascript">
+    //Resize the "newMessage" box acording to content.
     textarea = document.querySelector("#newmessage");
     textarea.addEventListener('input', autoResize, false);
   
@@ -45,6 +46,22 @@
         this.style.height = 'auto';
         this.style.height = this.scrollHeight + 'px';
     }
+
+    //Add1, Add2
+
+    //Show/Send Add Message Element when button is pressed
+    function addmbehave() {
+        if (window.getComputedStyle(addnums).display === "none"){
+            document.getElementById("addnums").style.display = "flex";
+            document.getElementById("newmessage").style.display = "inline-block";
+        }
+
+        else if (window.getComputedStyle(addnums).display === "flex") {
+            let message = document.getElementById("newmessage").value;
+            let aimcount = document.getElementById("counter").value;
+        }
+    }
+
 </script>
 </body>
 </html>
