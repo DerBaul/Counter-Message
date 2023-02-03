@@ -6,7 +6,6 @@ body {
 .bg-dark{
     background-color: #212121;
 }
-
 .text-white{
     color: #fff;
 }
@@ -48,7 +47,7 @@ body {
 }
 
 .smallb {
-    background-color: blue;
+    background-color: #FF4934;
     border: none;
     border-radius: 5px;
     color: white;
@@ -60,16 +59,6 @@ body {
     width: 25px;
 }
 
-.noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
-  }
-
 #hero{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -77,7 +66,6 @@ body {
     left: 50%;
     transform: translate(-50%, -70%);
     position: absolute;
-    cursor: pointer;
 }
 #counter{
 
@@ -107,6 +95,7 @@ body {
     flex-direction: row;
     width: 100%;
     margin-bottom: 20px;
+
 }
 
 #add1{
@@ -128,7 +117,6 @@ body {
 #newmessage:focus, input:focus{
     outline-color: #FF4934;
 }
-
 #addM{
     background-color: #FF4934;
     border: none;

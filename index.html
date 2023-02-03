@@ -15,16 +15,104 @@
         <div id="info" class="circle">i</div>
     </div>
 
-    <div id="hero" class="center">
-        <div id="counter" class="text-red">0</div>
+    <div id="hero" class="center" onclick="inc_count()">
+        <div id="counter" class="text-red noselect">00</div>
         
         <div id="tap" class="text-small"> <p>Tap your screen</p> </div>
     </div>
 
     <div id="bottom" class="center">
-        <div id="addM" class="">Add Message</div>
+        
+        <textarea id="newmessage" maxlength="250" placeholder="Type your message here and use the buttons to choose where it'll appear."></textarea>
+
+        <div id="addnums">
+            <div id="add1" class="smallb" onclick="add(1)">+1</div>
+            <div id="add5" class="smallb" onclick="add(5)">+5</div>
+            <div id="add10" class="smallb" onclick="add(10)">+10</div>
+            <div id="add20" class="smallb" onclick="add(20)">+20</div>
+        </div>
+        <button onclick="addmbehave()" id="addM" class="">Add Message</button>
+        
     </div>
 
 </div>
+
+<script>
+    //Increase Count on click
+    function inc_count (){
+        let data;
+        fetch("http://127.0.0.1:5000/count_inc")
+        .then(response => response.json())  
+        .then(json => {
+            console.log(json);
+            count = json["count"];
+            message = json["message"];
+            document.getElementById("counter").innerHTML = count;
+            if (typeof message == "string") {
+                document.getElementById("tap").innerHTML = message;
+                document.getElementById("tap").style.display = 'block';
+                document.getElementById("tap").style.color = '#fff';
+                document.getElementById("tap").style.opacity = '100%';
+
+            }
+            
+        })
+        document.getElementById("tap").style.display = 'none';    
+    }
+
+    //Resize the "newMessage" box acording to content.
+    textarea = document.querySelector("#newmessage");
+    textarea.addEventListener('input', autoResize, false);
+  
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+
+    //Add1, Add2...
+    function add(x) {
+        let curcount = parseInt(document.getElementById("counter").innerHTML);
+        console.log(curcount)
+        let newcount = curcount + x;
+        console.log(newcount)
+        document.getElementById("counter").innerHTML = newcount;
+    }
+
+    //Show/Send Add Message Element when button is pressed
+    function addmbehave() {
+        if (window.getComputedStyle(addnums).display === "none"){
+            document.getElementById("addnums").style.display = "flex";
+            document.getElementById("newmessage").style.display = "inline-block";
+            document.getElementById("counter").style.color = "blue"
+            add(2);
+        }
+
+        else if (window.getComputedStyle(addnums).display === "flex") {
+            let message = document.getElementById("newmessage").value;
+            let aimcount = document.getElementById("counter").innerHTML;
+            console.log(message)
+            console.log(aimcount)
+
+            let pack = {
+                "count" : aimcount,
+                "message" : message
+            }
+            fetch("http://127.0.0.1:5000/add_message", {
+                method:"POST", 
+                headers: {
+                    "Content-Typt": "application/json"
+                },
+                body: JSON.stringify(pack)
+            })
+            document.getElementById("addnums").style.display = "none";
+            document.getElementById("newmessage").style.display = "none";
+            document.getElementById("counter").style.color = "#FF4934"
+            document.getElementById("newmessage").value = "";
+            inc_count();
+        }
+    }
+
+</script>
+
 </body>
 </html>
