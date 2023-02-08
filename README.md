@@ -1,7 +1,8 @@
 # Counter-Message
-Is a Projekt i build to learn working with Front- and Backend. 
-The Site has an counter that will incease eyerytime it gets klicked.
-The State of the counter in stored in the backend and the next shown nummber is also calculated in the backend.
-Unseres can add Messages at a number that hasn't been shown yet. The messesage whith it's position will be sotred using SQLite. 
+Is a Project I build to learn working with Front- and Backend.
+
+The Site has a counter that will increase every time it gets clicked.
+The counter's state is stored in the backend, and the next number shown is also calculated in the backend.
+Users can add messages at a number that hasn't been shown yet. The message with its position will be stored using SQLite. 
 Once the Counter reaches a position at which a message is stored, the message gets displayed. 
-This allows useres to place messages, that other users can discover.
+This allows users to place messages, that other users can discover.
